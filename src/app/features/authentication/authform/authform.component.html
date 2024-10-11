@@ -1,0 +1,37 @@
+<div class="login-container">
+        <mat-card-content >
+            <div class="auth-logo">
+                <img src="/image.png" alt="My Image" class="logo">
+            </div>
+            <div *ngIf="currentTab==='LOGIN'"  class="auth-form">
+                <app-textinput  [label]="'Email'" [placeholder]="'Ex. kuldeep@insonix.com'" [type]="'email'" name="email" appearance="outline" [validationMessages]="{ required: 'Email is required', email: 'Please enter a valid email address' }" [required]="false" [disabled]="false" [readonly]="false" (valueChanged)="handleChange($event)">  </app-textinput>
+                <app-textinput [label]="'Password'" [placeholder]="''" [type]="'password'" name="password" appearance="outline" [validationMessages]="{ required: 'Password is required', email: 'Please enter a valid email address' }" [required]="false" [disabled]="false" [readonly]="false" (valueChanged)="handleChange($event)">  </app-textinput>
+                <p>Don't have an Account? 
+                    <span class="link-button" (click)="changeForm('REGISTER')">Signup</span>
+                </p>
+                <button mat-raised-button color="primary" (click)="handleAction()" class="full-width login" type="submit">
+                    Login
+                </button>
+            </div>
+            
+            <div *ngIf="currentTab==='REGISTER'" >
+                <app-textinput  [label]="'Email'" [placeholder]="'Ex. kuldeep@insonix.com'" [type]="'email'" name="email" appearance="outline" [validationMessages]="{ required: 'Email is required', email: 'Please enter a valid email address' }" [required]="false" [disabled]="false" [readonly]="false" (valueChanged)="handleChange($event)">  </app-textinput>
+                <app-textinput  [label]="'Name'" [placeholder]="'kuldeep'" [type]="'text'" name="name" appearance="outline" [validationMessages]="{ required: 'Email is required', email: 'Please enter a valid email address' }" [required]="false" [disabled]="false" [readonly]="false" (valueChanged)="handleChange($event)">  </app-textinput>
+                <app-textinput  [label]="'Mobile'" [placeholder]="'+91-9855171485'" [type]="'number'" name="mobileNo" appearance="outline" [validationMessages]="{ required: 'Email is required', email: 'Please enter a valid email address' }" [required]="false" [disabled]="false" [readonly]="false" (valueChanged)="handleChange($event)">  </app-textinput>
+                <app-textinput [label]="'Password'" [placeholder]="''" [type]="'password'" name="password" appearance="outline" [validationMessages]="{ required: 'Password is required', email: 'Please enter a valid email address' }" [required]="false" [disabled]="false" [readonly]="false" (valueChanged)="handleChange($event)">  </app-textinput>
+                <p>already have an Account? 
+                    <span class="link-button" (click)="changeForm('LOGIN')">Login</span>
+              </p>
+            <button mat-raised-button color="primary" (click)="handleAction()" class="full-width login" type="submit">
+                Signup
+            </button>
+            </div>
+
+            <mat-card-actions>
+                        <div class="action-buttons">
+                            <button class="social-button facebook-button" (click)="signInWithFacebook()">Facebook</button>
+                            <button class="social-button google-button" (click)="signInWithGoogle()">Google</button>
+                         </div>
+                 </mat-card-actions>
+        </mat-card-content>
+</div>

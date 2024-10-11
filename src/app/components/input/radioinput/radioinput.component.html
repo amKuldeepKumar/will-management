@@ -1,0 +1,7 @@
+<legend>{{ label }}</legend>
+<mat-radio-group [(ngModel)]="value" [disabled]="disabled" (change)="handleRadioChange($event)">
+  <mat-radio-button *ngFor="let item of options" [value]="item.value">
+    {{ item.label }}
+  </mat-radio-button>
+
+</mat-radio-group>

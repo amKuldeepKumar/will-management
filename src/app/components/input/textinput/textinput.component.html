@@ -1,0 +1,23 @@
+
+<div *ngIf="formControl.errors">
+    <mat-error *ngFor="let errorKey of getValidationKeys()">
+      {{ getErrorMessage(errorKey) }}
+    </mat-error>
+  </div>
+<mat-form-field class="example-full-width" [appearance]="appearance">
+    <mat-label>{{ label }}</mat-label>
+    <input 
+      [type]="type"
+      matInput
+      [formControl]="formControl"
+      [placeholder]="placeholder"
+      [class]="class"
+      [ngStyle]="style"
+      [name]="name"
+      [disabled]="disabled"
+      [readonly]="readonly"
+      [required]="required"
+      (input)="onInputChange($event)"> 
+</mat-form-field>
+
+  
